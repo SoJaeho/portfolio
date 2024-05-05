@@ -1,0 +1,7 @@
+.App{
+    text-align: center;
+}
+
+.App > div{
+    min-height: 1080px;
+}
