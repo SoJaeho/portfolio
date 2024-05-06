@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { MemoContext } from '../../Body/Intro';
 
 function HeaderButtons({
   buttons,
@@ -10,12 +11,14 @@ function HeaderButtons({
   resizable,
   className,
 }) {
+  const {setMemo,memo} = useContext(MemoContext);
   const buttonElements = {
     minimize: (
       <button
         key="minimize"
         className="header__button header__button--minimize"
         onMouseUp={onMinimize}
+        onClick={()=>setMemo(!memo)}
       />
     ),
     maximize: (
@@ -67,6 +70,7 @@ export default styled(HeaderButtons)`
     border-radius: 3px;
     &:hover {
       filter: brightness(120%);
+      cursor: pointer;
     }
     &:hover:active {
       filter: brightness(90%);

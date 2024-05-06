@@ -1,15 +1,20 @@
 import styled from "styled-components";
 import Memo from "../components/memo/memo";
 import IntroFooter from "../components/footer/IntroFooter";
+import { createContext, useState } from "react";
 
+
+export const MemoContext = createContext(null);
 function Intro(){
-    
+    const [memo, setMemo] = useState(true);
     return(
-        <>
-            <Div>
-                <Memo/>
-                <IntroFooter/>
-            </Div>
+        <>  
+            <MemoContext.Provider value={{memo, setMemo}}>
+                <Div>
+                    <Memo/>
+                    <IntroFooter/>
+                </Div>
+            </MemoContext.Provider>
         </>
     );
 }

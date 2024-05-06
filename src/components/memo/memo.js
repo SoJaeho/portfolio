@@ -1,9 +1,11 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useContext, useRef, useState } from 'react';
 import styled from 'styled-components';
 import Typewriter from 'typewriter-effect';
 import HeaderButtons from './HeaderButtons';
+import { MemoContext } from '../../Body/Intro';
 
 function Memo() {
+    const {memo} = useContext(MemoContext);
     const wrapRef = useRef(null);
     const headerRef = useRef(null);
     let lastX = 0;
@@ -40,9 +42,9 @@ function Memo() {
         document.addEventListener('mouseup', removeEvent);
         document.addEventListener('mousemove', onMove);
     }, []);
-
+    
     return (
-        <Wrap ref={wrapRef}>
+        <Wrap ref={wrapRef} style={{visibility:memo?"visible":"hidden"}}>
             <Header 
                 ref={headerRef}
                 onMouseDown={onMouseDown}
@@ -105,9 +107,11 @@ const Header = styled.div`
     border-radius: 5px 5px 0px 0px;
     background: linear-gradient(rgb(0, 88, 238) 0%, rgb(53, 147, 255) 4%, rgb(40, 142, 255) 6%, rgb(18, 125, 255) 8%, rgb(3, 111, 252) 10%, rgb(2, 98, 238) 14%, rgb(0, 87, 229) 20%, rgb(0, 84, 227) 24%, rgb(0, 85, 235) 56%, rgb(0, 91, 245) 66%, rgb(2, 106, 254) 76%, rgb(0, 98, 239) 86%, rgb(0, 82, 214) 92%, rgb(0, 64, 171) 94%, rgb(0, 48, 146) 100%);
     text-align: center;
+   
     .memo_ico{
         margin-top:1px;
     }
+    
     .memo_name{
         flex: 1 0 auto;
         text-align:left;
