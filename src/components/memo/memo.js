@@ -4,7 +4,6 @@ import Typewriter from 'typewriter-effect';
 import HeaderButtons from './HeaderButtons';
 
 function Memo() {
-    const [memoText, setMemoText] = useState('');
     const wrapRef = useRef(null);
     const headerRef = useRef(null);
     let lastX = 0;
@@ -12,9 +11,9 @@ function Memo() {
     let startX = 0;
     let startY = 0;
 
-    const onFocusout = useCallback(({ target }) => {
-        setMemoText(target.value);
-    }, [memoText]);
+    // const onFocusout = useCallback(({ target }) => {
+    //     setMemoText(target.value);
+    // }, [memoText]);
 
     const onMove = useCallback((e) => {
         e.preventDefault(); 
@@ -58,11 +57,17 @@ function Memo() {
                 <Typewriter
                     onInit={(typewriter) => {
                         typewriter
-                        .typeString('안녕하세요')
+                        .typeString(' 안녕하세요')
                         .pauseFor(100)
-                        .typeString('<br/>개발자')
+                        .typeString('<br/>풀스택 개발자')
                         .pauseFor(100)
-                        .typeString('<br/>소재호입니다')
+                        .typeString('<br/>소재호입니다.')
+                        .pauseFor(100)
+                        .typeString('<br/>')
+                        .pauseFor(300)
+                        .typeString('<br/> 코딩에 미쳐있어,')
+                        .pauseFor(100)
+                        .typeString('<br/>숨 쉬듯이 배우고 개발하는 것이 장점입니다.')
                         .start()
                         .pauseFor(100)
                     }}
@@ -81,7 +86,7 @@ const Wrap = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 500px;
+    width: 480px;
 
     background: white;
     border-radius: 5px;
