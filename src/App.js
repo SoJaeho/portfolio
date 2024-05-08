@@ -6,7 +6,7 @@ import Projects from "./Body/Projects";
 import Skills from "./Body/Skills";
 import Chrome from "./components/header/Chrome";
 import "./Css/App.css";
-
+import "./Css/dust.css";
 export const scrollContext = createContext(null);
 function App() {
   const [scrollY, setScrollY] = useState(0);
@@ -26,15 +26,30 @@ function App() {
   return (
     
     <div className="App">
+      
       <scrollContext.Provider value={{scrollY}}>
+        <div className="full-wh">	
+          <div className="bg-animation">
+            <div id='stars'></div>
+            <div id='stars2'></div>
+            <div id='stars3'></div>
+            <div id='stars4'></div>
+          </div>
+        </div>
         <Intro />
         <div className="chrome">
-          <Chrome />   
-          <Profile />
-          <Skills />
-          <Projects />
-          <Archiving /> 
+          <Chrome />
+          <div className={scrollY>=2710?"bgcAble":"bgcUnable"}>  
+            
+            <Profile />
+            <Skills />
+            <Projects />
+            <Archiving /> 
+          </div> 
+          
+       
         </div>
+        
       </scrollContext.Provider>  
 
     </div>

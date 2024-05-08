@@ -1,21 +1,12 @@
-import { useContext } from "react";
 import styled from "styled-components";
-import { scrollContext } from "../App";
 
 function Projects(){
-    const {scrollY} = useContext(scrollContext);
+    
     return(
         <>
-            <Div id="Projects" className={scrollY>=2350?"bgcAble":"bgcUnable"}>
+            <Div id="Projects">
                 <p>Projects</p>
-                <div className="full-wh">	
-                    <div className="bg-animation">
-                        <div id='stars'></div>
-                        <div id='stars2'></div>
-                        <div id='stars3'></div>
-                        <div id='stars4'></div>
-                    </div>
-                </div> 
+                
             </Div>
         </>
     );
@@ -24,7 +15,6 @@ function Projects(){
 export default Projects;
 
 const Div = styled.div`
-    position:relative;   
+    padding:20px;
     transition: all 0.2s ease 0s;
-    z-index: -1;
 `;

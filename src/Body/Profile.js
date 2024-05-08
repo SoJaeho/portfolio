@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import "../Css/dust.css";
-import { useContext } from "react";
-import { scrollContext } from "../App";
+
 function Profile(){
-    const {scrollY} = useContext(scrollContext);
+    
     return(
         <>
-            <Div id="Profile" className={scrollY>=2350?"bgcAble":"bgcUnable"}>
+            <Div id="Profile">
                 <div className="pro_text">Profile</div>
                 <div className="pro_bgr">
                 <div className="pro_bg">
@@ -35,14 +33,14 @@ function Profile(){
                         <div className="pro_bg_ele_div1"><img className="pro_bg_ele_img" src="tel.svg" alt="tel_img"/></div>
                         <div className="pro_bg_ele_div2">
                             <div className="pro_bg_ele_label">전화번호</div>
-                            <div className="pro_bg_ele_value">010-4162-0646</div>
+                            <div className="pro_bg_ele_value"><a href="tel:01041620646">010-4162-0646</a></div>
                         </div>
                     </div>
                     <div className="pro_bg_ele">
                         <div className="pro_bg_ele_div1"><img className="pro_bg_ele_img" src="email.svg" alt="email_img"/></div>
                         <div className="pro_bg_ele_div2">
                             <div className="pro_bg_ele_label">이메일</div>
-                            <div className="pro_bg_ele_value">sojh615@naver.com</div>
+                            <div className="pro_bg_ele_value"><a href="mailto:sojh615@naver.com">sojh615@naver.com</a></div>
                         </div>
                     </div>
                     <div className="pro_bg_ele">
@@ -63,18 +61,16 @@ function Profile(){
 export default Profile;
 
 const Div = styled.div`
-    position:relative;   
-    transition: all 0.2s ease 0s;
-    z-index: -1;
     text-align:left;
     padding:20px;
     .pro_text{
-        border-bottom: 3px solid;
-        margin: 0 10%;
-        width: 25%;
+    
+        border-bottom: 4px solid;
+        margin: 20px 10%;
+        width: 27%;
         min-width: 250px;
-        padding: 1px;
-        z-index: 0;
+        padding: 0px;
+        text-shadow: 3px 3px 5px white;
         color: #6ec6ca;
         font-size: 70px;
         font-weight: 600;
@@ -82,15 +78,16 @@ const Div = styled.div`
         -webkit-text-stroke-color: #43474b;
     }
     .pro_bgr{
+        
         margin: 10px auto;
-        padding: 50px 10% 50px 10%;
+        padding: 80px 10% 50px 10%;
+        
         width: 60%;
         text-align:center;
-       
         border-radius: 30px;
         background-color:white;
-        z-index: 0;
         color: #495057;
+        -webkit-box-shadow: 10px 10px 10px 0 rgba(68, 68, 68, 0.5);
     }
     .pro_bg{
         display:flex;
@@ -99,7 +96,7 @@ const Div = styled.div`
         flex-flow: row wrap;
         justify-content: center;
         margin-top:10px;
-        margin-bottom:50px;
+        margin-bottom:60px;
         -webkit-box-pack: justify;
     }
     .pro_bg_ele{
@@ -122,6 +119,13 @@ const Div = styled.div`
         font-weight: 600;
         font-size: 16px;
         color:#202020;
+        a{
+            color:#202020;
+            text-decoration-line: none;
+            &:hover{
+                color:orange;
+            }
+        }
     }
     .pro_notice{
         color: #424242;
@@ -131,6 +135,6 @@ const Div = styled.div`
         padding:25px 10px 25px 10px;
         margin: 0 auto;
         background-color:#f0b9c9;
-        
+       
     }
 `;

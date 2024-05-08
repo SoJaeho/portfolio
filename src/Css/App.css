@@ -9,15 +9,18 @@
     
 }
 #Profile,#Skills,#Projects,#Archiving{
+  
     padding-top: 110px;
     min-height: 720px;
 }
 
 .bgcAble{
     background-color: white;
-    
+    transition: all 0.2s ease 0s;
 }
 .bgcUnable{
-    background: rgba(97,73,154,1);
+    background-color:transparent;
+    transition: all 0.2s ease 0s;
+    
 }
 

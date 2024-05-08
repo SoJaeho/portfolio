@@ -2,16 +2,20 @@ import { useContext} from "react";
 import styled from "styled-components";
 import { scrollContext } from "../../App";
 
+
 function Chrome(){
     const {scrollY} = useContext(scrollContext);
+    const scrollupdown=(e)=>{
+        document.getElementById(e).scrollIntoView({behavior:"smooth"});
+    };
     return(
         <div style={{background:"black",position: "sticky",top:"0"}}>
             <Div>
-                <div className="tab" style={scrollY>=0&&scrollY<720?{backgroundColor: "rgb(45,45,45)"}:{}} onClick={()=>document.getElementById("Intro").scrollIntoView({behavior:"smooth"})}><div><img src="A.png" alt="intro_window"/><span> Intro</span></div></div>
-                <div className="tab" style={scrollY>=720&&scrollY<1550?{backgroundColor: "rgb(45,45,45)"}:{}} onClick={()=>document.getElementById("Profile").scrollIntoView({behavior:"smooth"})}><img src="B.png" alt="intro_window"/><span> Profile</span></div>
-                <div className="tab" style={scrollY>=1550&&scrollY<2380?{backgroundColor: "rgb(45,45,45)"}:{}} onClick={()=>document.getElementById("Skills").scrollIntoView({behavior:"smooth"})}><img src="C.png" alt="intro_window"/><span> Skills</span></div>
-                <div className="tab" style={scrollY>=2380&&scrollY<3210?{backgroundColor: "rgb(45,45,45)"}:{}} onClick={()=>document.getElementById("Projects").scrollIntoView({behavior:"smooth"})}><img src="D.png" alt="intro_window"/><span> Projects</span></div>
-                <div className="tab" style={scrollY>=3210?{backgroundColor: "rgb(45,45,45)"}:{}} onClick={()=>document.getElementById("Archiving").scrollIntoView({behavior:"smooth"})}><img src="E.png" alt="intro_window"/><span> Archiving</span></div>
+                <div className="tab tab_a" onClick={()=>scrollupdown("Intro")}><div><img src="A.png" alt="intro_window"/><span> Intro</span></div></div>
+                <div className="tab tab_b" onClick={()=>scrollupdown("Profile")}><img src="B.png" alt="profile_window"/><span> Profile</span></div>
+                <div className="tab tab_c" onClick={()=>scrollupdown("Skills")}><img src="C.png" alt="skills_window"/><span> Skills</span></div>
+                <div className="tab tab_d" onClick={()=>scrollupdown("Projects")}><img src="D.png" alt="Projects_window"/><span> Projects</span></div>
+                <div className="tab tab_e" onClick={()=>scrollupdown("Archiving")}><img src="E.png" alt="archiving_window"/><span> Archiving</span></div>
                 <div className="control">
                     <div>ㅡ</div>
                     <div>□</div>
@@ -30,6 +34,9 @@ function Chrome(){
 }
 
 export default Chrome;
+
+
+
 
 const Div = styled.div`
     display: flex;

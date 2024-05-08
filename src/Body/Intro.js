@@ -23,7 +23,8 @@ export default Intro;
 
 const Div = styled.div`
    
-    position:relative;
+    position: relative;
+  
     background: url(https://i.imgur.com/Zk6TR5k.jpg) center center;
     ;
     
