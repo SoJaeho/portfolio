@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useRef, useState } from 'react';
+import React, { useCallback, useContext, useRef} from 'react';
 import styled from 'styled-components';
 import Typewriter from 'typewriter-effect';
 import HeaderButtons from './HeaderButtons';

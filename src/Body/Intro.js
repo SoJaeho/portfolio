@@ -10,7 +10,7 @@ function Intro(){
     return(
         <>  
             <MemoContext.Provider value={{memo, setMemo}}>
-                <Div>
+                <Div id="Intro">
                     <Memo/>
                     <IntroFooter/>
                 </Div>

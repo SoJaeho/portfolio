@@ -6,4 +6,18 @@
     
     
     min-height: 720px;
+    
 }
+#Profile,#Skills,#Projects,#Archiving{
+    padding-top: 110px;
+    min-height: 720px;
+}
+
+.bgcAble{
+    background-color: white;
+    
+}
+.bgcUnable{
+    background: rgba(97,73,154,1);
+}
+
