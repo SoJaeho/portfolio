@@ -17,6 +17,7 @@ function Projects(){
     return(
         <>
             <Div id="Projects">
+                <div className="project_text">Projects</div>
                 <div className="project_bg">
                     <div className="project_title">
                         부산 오페라하우스 
@@ -160,6 +161,20 @@ export default Projects;
 const Div = styled.div`
     padding:20px;
     transition: all 0.2s ease 0s;
+    .project_text{
+        text-align:left;
+        border-bottom: 4px solid;
+        margin: 20px 10%;
+        width: 27%;
+        min-width: 250px;
+        padding: 0px;
+        text-shadow: 3px 3px 5px white;
+        color: #6ec6ca;
+        font-size: 70px;
+        font-weight: 600;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #43474b;
+    }
     .project_title{
         padding-bottom: .5rem;
         font-family: Black Han Sans, sans-serif;
