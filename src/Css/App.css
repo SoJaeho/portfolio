@@ -1,5 +1,6 @@
 .App{
     text-align: center;
+    font-family: Noto Sans KR, sans-serif;
 }
 
 .App > div{
@@ -15,7 +16,7 @@
 }
 
 .bgcAble{
-    background-color: white;
+    background-color: black;
     transition: all 0.2s ease 0s;
 }
 .bgcUnable{

@@ -107,9 +107,10 @@ const Div = styled.div`
     }
     .ski_ele{
         background-color: white;
-        border-radius: 5px;
+        border-radius: 20px;
         padding:10px;
         text-align:center;
+        -webkit-box-shadow: 10px 10px 10px 0 rgba(68, 68, 68, 0.5);
         img{
             width:64px;
             height:64px;

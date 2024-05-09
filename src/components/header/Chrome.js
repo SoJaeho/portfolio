@@ -9,9 +9,9 @@ function Chrome(){
         document.getElementById(e).scrollIntoView({behavior:"smooth"});
     };
     return(
-        <div style={{background:"black",position: "sticky",top:"0"}}>
+        <div style={{background:"black",position: "sticky",top:"0",zIndex:"1"}}>
             <Div>
-                <div className="tab tab_a" onClick={()=>scrollupdown("Intro")}><div><img src="A.png" alt="intro_window"/><span> Intro</span></div></div>
+                <div className="tab tab_a" onClick={()=>scrollupdown("Intro")}><img src="A.png" alt="intro_window"/><span> Intro</span></div>
                 <div className="tab tab_b" onClick={()=>scrollupdown("Profile")}><img src="B.png" alt="profile_window"/><span> Profile</span></div>
                 <div className="tab tab_c" onClick={()=>scrollupdown("Skills")}><img src="C.png" alt="skills_window"/><span> Skills</span></div>
                 <div className="tab tab_d" onClick={()=>scrollupdown("Projects")}><img src="D.png" alt="Projects_window"/><span> Projects</span></div>
@@ -65,7 +65,13 @@ const Div = styled.div`
             cursor: pointer;
         }
         
+        
     }
+    @media (max-width: 800px) {
+        .tab > span{
+             display:none;
+         }
+     }
     .control{
         display: flex;
         flex: 1 0 auto;
