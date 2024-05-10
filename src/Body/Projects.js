@@ -126,7 +126,7 @@ function Projects(){
                                     URL
                                 </div>
                                 <div className="project_cont_value">
-                                    <a href="">https://sjh-portfolio.com</a>
+                                    <a href="https://sojaeho.github.io/portfolio">https://sojaeho.github.io/portfolio</a>
                                 </div>
                             </div>
                             <div className="project_cont_line">
@@ -150,7 +150,7 @@ function Projects(){
                                     Deployment
                                 </div>
                                 <div className="project_cont_value">
-                                    AWS (light seil)
+                                    GitHub
                                 </div>
                             </div>
                         </div>
