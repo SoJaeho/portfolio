@@ -8,14 +8,15 @@ function Chrome(){
     const scrollupdown=(e)=>{
         document.getElementById(e).scrollIntoView({behavior:"smooth"});
     };
+    
     return(
         <div style={{background:"black",position: "sticky",top:"0",zIndex:"1"}}>
             <Div>
-                <div className="tab tab_a" onClick={()=>scrollupdown("Intro")}><img src="A.png" alt="intro_window"/><span> Intro</span></div>
-                <div className="tab tab_b" onClick={()=>scrollupdown("Profile")}><img src="B.png" alt="profile_window"/><span> Profile</span></div>
-                <div className="tab tab_c" onClick={()=>scrollupdown("Skills")}><img src="C.png" alt="skills_window"/><span> Skills</span></div>
-                <div className="tab tab_d" onClick={()=>scrollupdown("Projects")}><img src="D.png" alt="Projects_window"/><span> Projects</span></div>
-                <div className="tab tab_e" onClick={()=>scrollupdown("Archiving")}><img src="E.png" alt="archiving_window"/><span> Archiving</span></div>
+                <div className="tab tab_a" style={scrollY<360?{backgroundColor: "rgb(45,45,45)"}:{}} onClick={()=>scrollupdown("Intro")}><img src="A.png" alt="intro_window"/><span> Intro</span></div>
+                <div className="tab tab_b" style={scrollY>=360&&scrollY<1400?{backgroundColor: "rgb(45,45,45)"}:{}} onClick={()=>scrollupdown("Profile")}><img src="B.png" alt="profile_window"/><span> Profile</span></div>
+                <div className="tab tab_c" style={scrollY>=1400&&scrollY<2600?{backgroundColor: "rgb(45,45,45)"}:{}} onClick={()=>scrollupdown("Skills")}><img src="C.png" alt="skills_window"/><span> Skills</span></div>
+                <div className="tab tab_d" style={scrollY>=2600&&scrollY<3600?{backgroundColor: "rgb(45,45,45)"}:{}} onClick={()=>scrollupdown("Projects")}><img src="D.png" alt="Projects_window"/><span> Projects</span></div>
+                <div className="tab tab_e" style={scrollY>=3600?{backgroundColor: "rgb(45,45,45)"}:{}} onClick={()=>scrollupdown("Archiving")}><img src="E.png" alt="archiving_window"/><span> Archiving</span></div>
                 <div className="control">
                     <div>ㅡ</div>
                     <div>□</div>

@@ -2,8 +2,14 @@ import styled from "styled-components";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import imageData from "../asset/img/imgAsset";
+import imageData2 from "../asset/img/imgAsset2";
 import { useState } from "react";
 const renderSlides = imageData.map(image => (
+    <div className="project_img_ele" key={image.alt}>
+      <img src={image.url} alt={image.alt} />
+  </div>
+));
+const renderSlides2 = imageData2.map(image => (
     <div className="project_img_ele" key={image.alt}>
       <img src={image.url} alt={image.alt} />
   </div>
@@ -101,7 +107,7 @@ function Projects(){
                                 selectedItem={imageData[currentIndex]}
                                 onChange={handleChange}
                                 style={{zIndex:"-1"}} >
-                                {renderSlides}
+                                {renderSlides2}
                             </Carousel>
                                 
                            
@@ -163,17 +169,18 @@ const Div = styled.div`
     transition: all 0.2s ease 0s;
     .project_text{
         text-align:left;
-        border-bottom: 4px solid;
+        border-bottom: 4px solid rgb(253,200,58);
         margin: 20px 10%;
         width: 27%;
         min-width: 250px;
         padding: 0px;
-        text-shadow: 3px 3px 5px white;
-        color: #6ec6ca;
+        text-shadow: 5px 5px 1px white;
+        color: transparent;
         font-size: 70px;
         font-weight: 600;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #43474b;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: rgb(253,200,58);
+        
     }
     .project_title{
         padding-bottom: .5rem;
@@ -205,16 +212,26 @@ const Div = styled.div`
        
         -webkit-box-shadow: 10px 10px 10px 0 rgba(68, 68, 68, 0.5);
     }
+    
     .project_dtl{
         display:flex;
         flex-flow: row wrap;
-        justify-content: center;
         
+        @media (max-width: 1200px) {
+            .project_imgs{
+                 width:100%;
+             }
+
+             .project_cont{
+                width:100%;
+             }
+         }
     }
     .project_imgs{
        
         width:40%;
         margin-right:5%;
+        padding-bottom: 50px;
     }
     .project_img_ele{
         background-color:black;
@@ -231,7 +248,6 @@ const Div = styled.div`
     .project_cont{
         width:55%;
         text-align:left;
-        
         .project_cont_label:before {
             content: "✔";
             display: inline;
@@ -251,6 +267,7 @@ const Div = styled.div`
             }
             .project_cont_value{
                 width:100%;
+                word-break: break-all;
             }
        }
         

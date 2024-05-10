@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 function FooterMenu(){
+    const scrollupdown=(e)=>{
+        document.getElementById(e).scrollIntoView({behavior:"smooth"});
+    };
     return(
         <>
             <Div>
@@ -9,7 +12,29 @@ function FooterMenu(){
                     <span>소재호</span>
                 </div>
                 <div className="Body">
-                    <div className="menu_left"></div>
+                    <div className="menu_left">
+                        <div className="ico_link" onClick={()=>scrollupdown("Intro")}>
+                            <img src="A.png" alt="A"/>
+                            <div><span>Intro</span></div>
+                        </div>
+                        <div className="ico_link" onClick={()=>scrollupdown("Profile")}>
+                            <img src="B.png" alt="B"/>
+                            <div><span>Profile</span></div>
+                        </div>
+                        <div className="ico_link" onClick={()=>scrollupdown("Skills")}>
+                            <img src="C.png" alt="C"/>
+                            <div><span>Skills</span></div>
+                        </div>
+                        <div className="ico_link" onClick={()=>scrollupdown("Projects")}>
+                            <img src="D.png" alt="D"/>
+                            <div><span>Projects</span></div>
+                        </div>
+                        <div className="ico_link" onClick={()=>scrollupdown("Archiving")}>
+                            <img src="E.png" alt="E"/>
+                            <div><span>Archiving</span></div>
+                        </div>
+                        
+                    </div>
                     <div className="menu_right"></div>
                 </div>
                 <div className="Footer">
@@ -35,6 +60,22 @@ const Div = styled.div`
     background-color: rgb(66, 130, 214);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    .ico_link{
+        display:flex;
+        font-size: 16px;
+        color: #202020;
+        padding: 10px 10px 10px 0;
+        img{
+            width:25px;
+        }
+        div{
+            padding-left:5px;
+            line-height:23px;
+        }
+        &:hover{
+            background-color: rgb(66, 130, 214);
+        }
+    }
     .Header{
         position: relative;
         align-self: flex-start;
@@ -73,7 +114,7 @@ const Div = styled.div`
         box-shadow: rgb(56, 93, 231) 0px 1px;
         .menu_left{
             background-color: rgb(255, 255, 255);
-            padding: 6px 5px 0px;
+            padding: 1px 5px 70px;
             width: 190px;
             display: flex;
             flex-direction: column;

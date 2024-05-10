@@ -10,7 +10,6 @@ import "./Css/dust.css";
 export const scrollContext = createContext(null);
 function App() {
   const [scrollY, setScrollY] = useState(0);
-
   const handleScroll = () => {
       const scrollPosition = window.pageYOffset;
       setScrollY(scrollPosition)
@@ -18,15 +17,12 @@ function App() {
 
   useEffect(() => {
       window.addEventListener('scroll', handleScroll);
-
       return () => {
       window.removeEventListener('scroll', handleScroll)
       }
   }, []);
   return (
-    
     <div className="App">
-      
       <scrollContext.Provider value={{scrollY}}>
         <div className="full-wh">	
           <div className="bg-animation">
@@ -39,7 +35,7 @@ function App() {
         <Intro />
         <div className="chrome">
           <Chrome />
-          <div className={scrollY>=2710?"bgcAble":"bgcUnable"}>  
+          <div className={scrollY>=3500?"bgcEnd":scrollY>=2600?"bgcAble":"bgcUnable"}>  
             
             <Profile />
             <Skills />

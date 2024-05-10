@@ -43,21 +43,23 @@ const Div = styled.div`
     display:flex;
     flex-flow: row wrap;
     justify-content: center;
+    padding-bottom:100px;
    }
     
     .arc_text{
         text-align:left;
-        border-bottom: 4px solid;
+        border-bottom: 4px solid black;
         margin: 20px 10%;
         width: 27%;
         min-width: 250px;
         padding: 0px;
-        text-shadow: 3px 3px 5px white;
-        color: #6ec6ca;
+        text-shadow: 5px 5px 1px gray;
+        color: transparent;
         font-size: 70px;
         font-weight: 600;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: #43474b;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: black;
+        
     }
     .arc_bgr{
         
